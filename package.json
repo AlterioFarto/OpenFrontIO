@@ -25,7 +25,11 @@
     "lint:fix": "eslint --fix",
     "prepare": "husky",
     "gen-maps": "cd map-generator && go run . && npm run format",
-    "inst": "npm ci --ignore-scripts"
+    "inst": "npm ci --ignore-scripts",
+    "android:build": "npm run build-prod && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:sync": "npx cap sync android",
+    "android:copy": "npx cap copy android"
   },
   "lint-staged": {
     "**/*": [
@@ -34,6 +38,9 @@
     ]
   },
   "devDependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/cli": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
     "@datastructures-js/priority-queue": "^6.3.5",
     "@eslint/compat": "^2.0.5",
     "@eslint/js": "^10.0.1",
